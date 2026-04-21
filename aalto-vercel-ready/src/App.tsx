@@ -32,7 +32,6 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 
 import aaltoLogo from './aalto-logo-clean.png';
-import aemLogo from './aem-logo.jfif';
 import talcaLogo from './talca.png';
 import unileverLogo from './unilever.png';
 import yaguarLogo from './yaguar.png';
@@ -644,7 +643,7 @@ function HomePage({ openModal, goToPersonalExterno }: { openModal: () => void; g
               <div>
                 <h3 className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#1a365d] mb-4">Respaldo institucional</h3>
                 <div className="flex items-center justify-between gap-4">
-                  <img src={aemLogo} alt="AEM" className="h-16 w-16 object-cover rounded-sm border border-slate-200" />
+                  <div className="h-16 w-16 rounded-sm border border-slate-200 bg-slate-900 text-white flex items-center justify-center text-sm font-semibold tracking-[0.2em]">AEM</div>
                   <p className="text-sm text-slate-600 leading-relaxed font-light">Socio de AEM, Asociación de Ejecutivos de Mendoza.</p>
                 </div>
               </div>
