@@ -31,11 +31,6 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
-import aaltoLogo from './aalto-logo-clean.png';
-import talcaLogo from './talca.png';
-import unileverLogo from './unilever.png';
-import yaguarLogo from './yaguar.png';
-import workerBrochure from './worker-brochure.png';
 
 type Sector = {
   title: string;
@@ -60,8 +55,8 @@ const clients: Client[] = [
   { type: 'text', name: 'Salentein', label: 'SALENTEIN' },
   { type: 'text', name: 'Rosell Boher Lodge', label: 'ROSELL BOHER' },
   { type: 'text', name: 'Trivento', label: 'TRIVENTO' },
-  { type: 'image', name: 'Talca', src: talcaLogo, className: 'max-h-14' },
-  { type: 'image', name: 'Yaguar', src: yaguarLogo, className: 'max-h-14' },
+  { type: 'text', name: 'Talca', label: 'TALCA' },
+  { type: 'text', name: 'Yaguar', label: 'YAGUAR' },
   { type: 'text', name: 'Chandon', label: 'CHANDON' },
   { type: 'text', name: 'Norton', label: 'NORTON' },
   { type: 'text', name: 'SMN Argentina', label: 'SMN' },
@@ -71,7 +66,7 @@ const clients: Client[] = [
   { type: 'text', name: 'Park Hyatt', label: 'PARK HYATT' },
   { type: 'text', name: 'Neverland', label: 'NEVERLAND' },
   { type: 'text', name: 'Coca-Cola', label: 'COCA-COLA' },
-  { type: 'image', name: 'Unilever', src: unileverLogo, className: 'max-h-20' },
+  { type: 'text', name: 'Unilever', label: 'UNILEVER' },
 ];
 
 const landingBenefitCards = [
@@ -135,7 +130,7 @@ function Logo({ className = '', dark = false }: { className?: string; dark?: boo
     <div
       className={`inline-flex items-center rounded-sm px-3 py-2 ${dark ? 'bg-white/95 shadow-lg' : 'bg-white'} ${className}`}
     >
-      <img src={aaltoLogo} alt="AALTO Mantenimiento" className="h-8 md:h-10 w-auto object-contain" />
+      <div className="text-[#1a365d] font-black uppercase tracking-[0.18em] leading-none text-sm md:text-base">AALTO<span className="block text-[9px] md:text-[10px] tracking-[0.28em] font-bold text-slate-500 mt-1">Mantenimiento</span></div>
     </div>
   );
 }
@@ -594,7 +589,7 @@ function HomePage({ openModal, goToPersonalExterno }: { openModal: () => void; g
 
             <div className="relative">
               <div className="aspect-[4/5] bg-slate-100 overflow-hidden shadow-2xl">
-                <img src={workerBrochure} alt="Operario de mantenimiento" className="w-full h-full object-cover grayscale" />
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=1200" alt="Operario de mantenimiento" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
               </div>
               <div className="absolute -bottom-6 -left-0 md:-left-8 bg-[#1a365d] text-white p-6 md:p-8 max-w-sm shadow-2xl">
                 <p className="text-sm md:text-base font-light leading-relaxed">
