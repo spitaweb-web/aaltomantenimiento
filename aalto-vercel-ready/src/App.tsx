@@ -31,6 +31,26 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
+import aaltoLogoCompleto from './assets/aalto-logo-completo.png';
+import aemLogo from './assets/aem-logo.png';
+import talcaLogo from './assets/talca.png';
+import unileverLogo from './assets/unilever.png';
+import yaguarLogo from './assets/yaguar.png';
+import randstadLogo from './assets/randstad.png';
+import famiqLogo from './assets/famiq.png';
+import salenteinLogo from './assets/salentein.png';
+import rosellBoherLogo from './assets/rosell-boher.png';
+import triventoLogo from './assets/trivento.png';
+import chandonLogo from './assets/chandon.png';
+import luigiBoscaLogo from './assets/luigi-bosca.png';
+import nortonLogo from './assets/norton.png';
+import renacerLogo from './assets/renacer.png';
+import smnLogo from './assets/smn.png';
+import parkHyattLogo from './assets/park-hyatt.png';
+import halliburtonLogo from './assets/halliburton.png';
+import neverlandLogo from './assets/neverland.png';
+import cocaColaLogo from './assets/coca-cola.png';
+
 
 type Sector = {
   title: string;
@@ -52,21 +72,25 @@ const sectors: Sector[] = [
 const values = ['Compromiso', 'Calidad', 'Innovación', 'Cercanía', 'Eficiencia'];
 
 const clients: Client[] = [
-  { type: 'text', name: 'Salentein', label: 'SALENTEIN' },
-  { type: 'text', name: 'Rosell Boher Lodge', label: 'ROSELL BOHER' },
-  { type: 'text', name: 'Trivento', label: 'TRIVENTO' },
-  { type: 'text', name: 'Talca', label: 'TALCA' },
-  { type: 'text', name: 'Yaguar', label: 'YAGUAR' },
-  { type: 'text', name: 'Chandon', label: 'CHANDON' },
-  { type: 'text', name: 'Norton', label: 'NORTON' },
-  { type: 'text', name: 'SMN Argentina', label: 'SMN' },
-  { type: 'text', name: 'Renacer', label: 'RENACER' },
-  { type: 'text', name: 'Luigi Bosca', label: 'LUIGI BOSCA' },
-  { type: 'text', name: 'Halliburton', label: 'HALLIBURTON' },
-  { type: 'text', name: 'Park Hyatt', label: 'PARK HYATT' },
-  { type: 'text', name: 'Neverland', label: 'NEVERLAND' },
-  { type: 'text', name: 'Coca-Cola', label: 'COCA-COLA' },
-  { type: 'text', name: 'Unilever', label: 'UNILEVER' },
+  { type: 'image', name: 'Randstad', src: randstadLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Talca', src: talcaLogo, className: 'max-h-12 md:max-h-14' },
+  { type: 'image', name: 'Unilever', src: unileverLogo, className: 'max-h-16 md:max-h-20' },
+  { type: 'image', name: 'Yaguar', src: yaguarLogo, className: 'max-h-12 md:max-h-14' },
+  { type: 'image', name: 'Salentein', src: salenteinLogo, className: 'max-h-12 md:max-h-14' },
+  { type: 'image', name: 'Rosell Boher Lodge', src: rosellBoherLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Trivento', src: triventoLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Chandon', src: chandonLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Luigi Bosca', src: luigiBoscaLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Norton', src: nortonLogo, className: 'max-h-12 md:max-h-14' },
+  { type: 'image', name: 'Renacer', src: renacerLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'SMN Argentina', src: smnLogo, className: 'max-h-12 md:max-h-14' },
+  { type: 'image', name: 'Halliburton', src: halliburtonLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Park Hyatt', src: parkHyattLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Neverland', src: neverlandLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Coca-Cola', src: cocaColaLogo, className: 'max-h-10 md:max-h-12' },
+  { type: 'image', name: 'Famiq', src: famiqLogo, className: 'max-h-12 md:max-h-14' },
+  { type: 'text', name: 'Achaval Ferrer', label: 'ACHAVAL FERRER' },
+  { type: 'text', name: 'Valle de Uco', label: 'VALLE DE UCO' },
 ];
 
 const landingBenefitCards = [
@@ -130,14 +154,18 @@ function Logo({ className = '', dark = false }: { className?: string; dark?: boo
     <div
       className={`inline-flex items-center rounded-sm px-3 py-2 ${dark ? 'bg-white/95 shadow-lg' : 'bg-white'} ${className}`}
     >
-      <div className="text-[#1a365d] font-black uppercase tracking-[0.18em] leading-none text-sm md:text-base">AALTO<span className="block text-[9px] md:text-[10px] tracking-[0.28em] font-bold text-slate-500 mt-1">Mantenimiento</span></div>
+      <img
+        src={aaltoLogoCompleto}
+        alt="AALTO Mantenimiento"
+        className="h-10 md:h-12 w-auto object-contain"
+      />
     </div>
   );
 }
 
 function ClientCard({ client }: { client: Client }) {
   return (
-    <div className="bg-white border border-slate-100 min-h-[112px] flex items-center justify-center px-6 py-6 hover:shadow-lg transition-all duration-300">
+    <div className="bg-white border border-slate-100 min-h-[112px] flex items-center justify-center px-6 py-6 hover:shadow-lg transition-all duration-300 rounded-sm">
       {client.type === 'image' ? (
         <img src={client.src} alt={client.name} className={`max-w-full object-contain ${client.className ?? 'max-h-12'}`} />
       ) : (
@@ -638,7 +666,7 @@ function HomePage({ openModal, goToPersonalExterno }: { openModal: () => void; g
               <div>
                 <h3 className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#1a365d] mb-4">Respaldo institucional</h3>
                 <div className="flex items-center justify-between gap-4">
-                  <div className="h-16 w-16 rounded-sm border border-slate-200 bg-slate-900 text-white flex items-center justify-center text-sm font-semibold tracking-[0.2em]">AEM</div>
+                  <img src={aemLogo} alt="AEM" className="h-16 w-16 object-contain rounded-sm border border-slate-200 bg-white p-2" />
                   <p className="text-sm text-slate-600 leading-relaxed font-light">Socio de AEM, Asociación de Ejecutivos de Mendoza.</p>
                 </div>
               </div>
@@ -723,7 +751,7 @@ function HomePage({ openModal, goToPersonalExterno }: { openModal: () => void; g
             <span className="text-[#3b82f6] font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-4 block">Prueba social</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a365d] uppercase tracking-tighter mb-4">Empresas que confían en AALTO</h2>
             <p className="text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
-              Incorporamos los clientes compartidos por Matías y los referentes visibles en el brochure para reforzar la trayectoria de la empresa.
+              Seleccionamos logos reales de clientes visibles en el brochure y en los materiales compartidos para reforzar la trayectoria y el respaldo de la empresa.
             </p>
           </div>
 
@@ -1063,3 +1091,4 @@ export default function App() {
     </div>
   );
 }
+
