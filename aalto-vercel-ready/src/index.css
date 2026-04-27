@@ -61,6 +61,16 @@
   mix-blend-mode: multiply;
 }
 
+/* Ocultar logos que se ven mal o rompen la grilla visual en mobile. */
+#clientes .grid > div:nth-child(9),
+#clientes .grid > div:nth-child(11),
+#clientes .grid > div:nth-child(12),
+#clientes .grid > div:nth-child(13),
+#clientes .grid > div:nth-child(15),
+#clientes .grid > div:nth-child(18) {
+  display: none !important;
+}
+
 #clientes span {
   position: relative !important;
   z-index: 1 !important;
