@@ -2,131 +2,16 @@
 
 @theme {
   --animate-marquee: marquee 60s linear infinite;
-
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
 }
 
-/* AALTO — Clientes con logos reales.
-   Se muestran solo 10 referencias visualmente defendibles.
-   Cuenta final visible: Randstad, Talca, Unilever, Yaguar, Salentein,
-   Rosell Boher, Chandon, Norton, Park Hyatt y Valle de Uco. */
-#clientes {
-  background:
-    radial-gradient(circle at 18% 8%, rgba(66, 153, 225, 0.10), transparent 30%),
-    radial-gradient(circle at 86% 92%, rgba(26, 54, 93, 0.08), transparent 32%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
-}
-
-#clientes .grid > div {
-  position: relative !important;
-  min-height: 112px !important;
-  height: 112px !important;
-  border: 1px solid rgba(26, 54, 93, 0.12) !important;
-  border-radius: 0.85rem !important;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%) !important;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.055) !important;
-  overflow: hidden !important;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
-}
-
-#clientes .grid > div:hover {
-  transform: translateY(-3px) !important;
-  border-color: rgba(59, 130, 246, 0.42) !important;
-  box-shadow: 0 24px 60px rgba(26, 54, 93, 0.12) !important;
-}
-
-#clientes .grid > div::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.045), transparent 44%);
-  pointer-events: none;
-}
-
-#clientes .grid > div::after {
-  content: none !important;
-}
-
-#clientes img {
-  display: block !important;
-  position: relative !important;
-  z-index: 1 !important;
-  width: auto !important;
-  max-width: 78% !important;
-  max-height: 54px !important;
-  object-fit: contain !important;
-  filter: none !important;
-  opacity: 1 !important;
-  mix-blend-mode: multiply;
-}
-
-/* HIDE BY CONTENT — evita repetir logos, vacíos o depender solo del orden.
-   Se ocultan los assets que en mobile se ven pobres o rompen la grilla. */
-#clientes .grid > div:has(img[alt="Trivento"]),
-#clientes .grid > div:has(img[alt="Luigi Bosca"]),
-#clientes .grid > div:has(img[alt="Renacer"]),
-#clientes .grid > div:has(img[alt="SMN Argentina"]),
-#clientes .grid > div:has(img[alt="Halliburton"]),
-#clientes .grid > div:has(img[alt="Neverland"]),
-#clientes .grid > div:has(img[alt="Coca-Cola"]),
-#clientes .grid > div:has(img[alt="Famiq"]),
-#clientes .grid > div:nth-child(18) {
-  display: none !important;
-}
-
-/* Backup por orden original del array. Si el browser no aplicara :has(), igual se limpian. */
-#clientes .grid > div:nth-child(7),
-#clientes .grid > div:nth-child(9),
-#clientes .grid > div:nth-child(11),
-#clientes .grid > div:nth-child(12),
-#clientes .grid > div:nth-child(13),
-#clientes .grid > div:nth-child(15),
-#clientes .grid > div:nth-child(16),
-#clientes .grid > div:nth-child(17),
-#clientes .grid > div:nth-child(18) {
-  display: none !important;
-}
-
-#clientes span {
-  position: relative !important;
-  z-index: 1 !important;
-  display: block !important;
-  color: #1a365d !important;
-  font-size: 0.72rem !important;
-  line-height: 1.15 !important;
-  letter-spacing: 0.18em !important;
-  font-weight: 900 !important;
-  text-align: center !important;
-  text-transform: uppercase !important;
-}
-
-@media (max-width: 640px) {
-  #clientes {
-    padding-top: 72px !important;
-    padding-bottom: 72px !important;
-  }
-
-  #clientes .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-  }
-
-  #clientes .grid > div {
-    min-height: 96px !important;
-    height: 96px !important;
-    padding: 14px !important;
-  }
-
-  #clientes img {
-    max-width: 82% !important;
-    max-height: 46px !important;
-  }
-
-  #clientes span {
-    font-size: 0.62rem !important;
-    letter-spacing: 0.14em !important;
-  }
-}
+#clientes { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important; }
+#clientes > div > div:first-child > span,
+#clientes > div > div:first-child > p { display: none !important; }
+#clientes .grid > div { height: 112px !important; min-height: 112px !important; border: 1px solid rgba(26,54,93,.12) !important; border-radius: .85rem !important; background: #fff !important; box-shadow: 0 18px 45px rgba(15,23,42,.055) !important; overflow: hidden !important; }
+#clientes img { max-width: 78% !important; max-height: 54px !important; width: auto !important; object-fit: contain !important; filter: none !important; opacity: 1 !important; mix-blend-mode: multiply; }
+#clientes .grid > div:nth-child(1), #clientes .grid > div:nth-child(5), #clientes .grid > div:nth-child(7), #clientes .grid > div:nth-child(9), #clientes .grid > div:nth-child(10), #clientes .grid > div:nth-child(11), #clientes .grid > div:nth-child(12), #clientes .grid > div:nth-child(13), #clientes .grid > div:nth-child(15), #clientes .grid > div:nth-child(16), #clientes .grid > div:nth-child(17), #clientes .grid > div:nth-child(18), #clientes .grid > div:nth-child(19) { display: none !important; }
+@media (max-width: 640px) { #clientes { padding-top: 56px !important; padding-bottom: 56px !important; } #clientes .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; } #clientes .grid > div { height: 96px !important; min-height: 96px !important; padding: 14px !important; } #clientes img { max-width: 82% !important; max-height: 46px !important; } }
