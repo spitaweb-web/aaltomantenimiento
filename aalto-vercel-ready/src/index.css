@@ -10,7 +10,7 @@
 }
 
 /* AALTO — Clientes con logos reales.
-   Se muestran los assets del repo, sin jerarquizar clientes y con orden visual uniforme. */
+   Se muestran solo los assets que se ven bien, sin jerarquizar clientes y con orden visual uniforme. */
 #clientes {
   background:
     radial-gradient(circle at 18% 8%, rgba(66, 153, 225, 0.10), transparent 30%),
@@ -61,12 +61,17 @@
   mix-blend-mode: multiply;
 }
 
-/* Ocultar logos que se ven mal o rompen la grilla visual en mobile. */
+/* Ocultar logos que se ven mal o rompen la grilla visual en mobile.
+   Orden del array original: 7 Trivento, 9 Luigi, 11 Renacer, 12 SMN,
+   13 Halliburton, 15 Neverland, 16 Coca-Cola, 17 Famiq/ícono, 18 Achaval. */
+#clientes .grid > div:nth-child(7),
 #clientes .grid > div:nth-child(9),
 #clientes .grid > div:nth-child(11),
 #clientes .grid > div:nth-child(12),
 #clientes .grid > div:nth-child(13),
 #clientes .grid > div:nth-child(15),
+#clientes .grid > div:nth-child(16),
+#clientes .grid > div:nth-child(17),
 #clientes .grid > div:nth-child(18) {
   display: none !important;
 }
