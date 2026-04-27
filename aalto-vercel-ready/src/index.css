@@ -10,7 +10,9 @@
 }
 
 /* AALTO — Clientes con logos reales.
-   Se muestran solo los assets que se ven bien, sin jerarquizar clientes y con orden visual uniforme. */
+   Se muestran solo 10 referencias visualmente defendibles.
+   Cuenta final visible: Randstad, Talca, Unilever, Yaguar, Salentein,
+   Rosell Boher, Chandon, Norton, Park Hyatt y Valle de Uco. */
 #clientes {
   background:
     radial-gradient(circle at 18% 8%, rgba(66, 153, 225, 0.10), transparent 30%),
@@ -61,9 +63,21 @@
   mix-blend-mode: multiply;
 }
 
-/* Ocultar logos que se ven mal o rompen la grilla visual en mobile.
-   Orden del array original: 7 Trivento, 9 Luigi, 11 Renacer, 12 SMN,
-   13 Halliburton, 15 Neverland, 16 Coca-Cola, 17 Famiq/ícono, 18 Achaval. */
+/* HIDE BY CONTENT — evita repetir logos, vacíos o depender solo del orden.
+   Se ocultan los assets que en mobile se ven pobres o rompen la grilla. */
+#clientes .grid > div:has(img[alt="Trivento"]),
+#clientes .grid > div:has(img[alt="Luigi Bosca"]),
+#clientes .grid > div:has(img[alt="Renacer"]),
+#clientes .grid > div:has(img[alt="SMN Argentina"]),
+#clientes .grid > div:has(img[alt="Halliburton"]),
+#clientes .grid > div:has(img[alt="Neverland"]),
+#clientes .grid > div:has(img[alt="Coca-Cola"]),
+#clientes .grid > div:has(img[alt="Famiq"]),
+#clientes .grid > div:nth-child(18) {
+  display: none !important;
+}
+
+/* Backup por orden original del array. Si el browser no aplicara :has(), igual se limpian. */
 #clientes .grid > div:nth-child(7),
 #clientes .grid > div:nth-child(9),
 #clientes .grid > div:nth-child(11),
