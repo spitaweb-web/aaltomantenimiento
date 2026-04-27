@@ -33,6 +33,13 @@ body nav.fixed img {
   display: none !important;
 }
 
+/* Quitar etiqueta/badge interno "ENFOQUE B2B REAL" del bloque diferencial. */
+#quienes .bg-\[\#1a365d\] .flex.items-center.gap-5,
+#quienes .bg-\[\#1a365d\] .flex.items-center.gap-4,
+#quienes .bg-\[\#1a365d\] > div:last-child {
+  display: none !important;
+}
+
 main > section:first-of-type {
   isolation: isolate !important;
   background: #ffffff !important;
