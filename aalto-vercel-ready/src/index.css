@@ -179,3 +179,15 @@ footer svg,
 #clientes img { max-width: 78% !important; max-height: 54px !important; width: auto !important; object-fit: contain !important; filter: none !important; opacity: 1 !important; mix-blend-mode: multiply; }
 #clientes .grid > div:nth-child(1), #clientes .grid > div:nth-child(5), #clientes .grid > div:nth-child(7), #clientes .grid > div:nth-child(8), #clientes .grid > div:nth-child(9), #clientes .grid > div:nth-child(10), #clientes .grid > div:nth-child(11), #clientes .grid > div:nth-child(12), #clientes .grid > div:nth-child(13), #clientes .grid > div:nth-child(15), #clientes .grid > div:nth-child(16), #clientes .grid > div:nth-child(17), #clientes .grid > div:nth-child(18), #clientes .grid > div:nth-child(19) { display: none !important; }
 @media (max-width: 640px) { #clientes { padding-top: 56px !important; padding-bottom: 56px !important; } #clientes .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; } #clientes .grid > div { height: 96px !important; min-height: 96px !important; padding: 14px !important; } #clientes img { max-width: 82% !important; max-height: 46px !important; } #sectores .grid > div > svg, #beneficios-pe .grid svg, #proceso-pe .grid svg, #especialidades .grid > div > svg { width: 40px !important; height: 40px !important; padding: 9px !important; border-radius: 14px !important; } main > section:first-of-type { min-height: 92vh !important; } main > section:first-of-type .max-w-5xl { padding: 1.35rem !important; } main > section:first-of-type h1 { font-size: clamp(2.45rem, 9.5vw, 3.7rem) !important; line-height: 1.02 !important; } main > section:first-of-type p:not(.inline-flex) { font-size: 1.08rem !important; line-height: 1.68 !important; } }
+
+/* Cambio puntual pedido por Matías: reemplazo de foto del hero por una imagen más industrial/técnica. */
+main > section:first-of-type > div.absolute {
+  background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=85&w=2000') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+main > section:first-of-type > div.absolute > img {
+  display: none !important;
+}
