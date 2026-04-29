@@ -1,0 +1,3 @@
+restore-stable-f3a3c9d
+triggered-from-chat: 2026-04-29
+purpose: force Vercel redeploy from stable code without touching UI
