@@ -1,0 +1,311 @@
+/* AALTO Premium Motion System
+   Solo animaciones y microinteracciones. No toca contenido ni assets.
+*/
+
+:root {
+  --aalto-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --aalto-ease-inout: cubic-bezier(0.83, 0, 0.17, 1);
+  --aalto-blue: #3b82f6;
+  --aalto-navy: #1a365d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes aaltoFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(0.985);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes aaltoFadeSoft {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aaltoHeroDrift {
+  0% {
+    transform: scale(1.025) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.055) translate3d(-10px, -6px, 0);
+  }
+  100% {
+    transform: scale(1.025) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes aaltoGridMove {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 74px 74px, 74px 74px;
+  }
+}
+
+@keyframes aaltoShine {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(170%) skewX(-18deg);
+  }
+}
+
+@keyframes aaltoPulseLine {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scaleX(0.55);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body nav.fixed {
+  transition:
+    background-color 320ms var(--aalto-ease-out),
+    box-shadow 320ms var(--aalto-ease-out),
+    transform 320ms var(--aalto-ease-out) !important;
+}
+
+body nav.fixed img,
+footer img {
+  transition: transform 280ms var(--aalto-ease-out), filter 280ms var(--aalto-ease-out) !important;
+}
+
+body nav.fixed button:hover img,
+footer img:hover {
+  transform: translateY(-1px) scale(1.025);
+}
+
+main > section:first-of-type > div.absolute > img {
+  transform-origin: 70% 50%;
+  animation: aaltoHeroDrift 18s var(--aalto-ease-inout) infinite;
+  will-change: transform;
+}
+
+main > section:first-of-type::after {
+  animation: aaltoGridMove 28s linear infinite;
+}
+
+main > section:first-of-type .max-w-5xl {
+  animation: aaltoFadeUp 900ms var(--aalto-ease-out) both;
+  will-change: transform, opacity;
+}
+
+main > section:first-of-type h1 {
+  letter-spacing: -0.06em !important;
+}
+
+main > section:first-of-type h1 span {
+  position: relative;
+  display: inline-block;
+}
+
+main > section:first-of-type h1 span::after {
+  content: "";
+  position: absolute;
+  left: 0.02em;
+  right: 0.02em;
+  bottom: -0.08em;
+  height: 0.06em;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.55), transparent);
+  transform-origin: left center;
+  animation: aaltoPulseLine 3.8s var(--aalto-ease-inout) infinite;
+}
+
+main > section:first-of-type button,
+#contacto button,
+#especialidades button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 240ms var(--aalto-ease-out),
+    box-shadow 240ms var(--aalto-ease-out),
+    background-color 240ms var(--aalto-ease-out),
+    border-color 240ms var(--aalto-ease-out) !important;
+}
+
+main > section:first-of-type button:hover,
+#contacto button:hover,
+#especialidades button:hover {
+  transform: translateY(-2px);
+}
+
+main > section:first-of-type button::before,
+#contacto button::before,
+#especialidades button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-140%) skewX(-18deg);
+  pointer-events: none;
+}
+
+main > section:first-of-type button:hover::before,
+#contacto button:hover::before,
+#especialidades button:hover::before {
+  animation: aaltoShine 760ms var(--aalto-ease-out) both;
+}
+
+#sectores .grid > div,
+#especialidades .grid > div,
+#clientes .grid > div,
+#quienes .grid > div,
+#contacto .bg-white,
+#contacto .space-y-8 > div,
+footer > div > div {
+  transition:
+    transform 260ms var(--aalto-ease-out),
+    box-shadow 260ms var(--aalto-ease-out),
+    border-color 260ms var(--aalto-ease-out),
+    background-color 260ms var(--aalto-ease-out),
+    opacity 260ms var(--aalto-ease-out) !important;
+}
+
+#sectores .grid > div:hover,
+#especialidades .grid > div:hover,
+#clientes .grid > div:hover,
+#quienes .grid > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.10) !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+#sectores .grid > div:hover {
+  background: rgba(255, 255, 255, 0.075) !important;
+}
+
+#clientes .grid > div:hover img {
+  transform: scale(1.045);
+}
+
+#clientes img {
+  transition: transform 280ms var(--aalto-ease-out), filter 280ms var(--aalto-ease-out), opacity 280ms var(--aalto-ease-out) !important;
+}
+
+#quienes img,
+#contacto .bg-white,
+#especialidades .grid > div {
+  will-change: transform;
+}
+
+#quienes .relative img {
+  transition: transform 520ms var(--aalto-ease-out), filter 520ms var(--aalto-ease-out) !important;
+}
+
+#quienes .relative:hover img {
+  transform: scale(1.035);
+  filter: contrast(1.06) brightness(1.02);
+}
+
+#quienes h2,
+#especialidades h2,
+#clientes h2,
+#contacto h2 {
+  position: relative;
+}
+
+#quienes h2::after,
+#especialidades h2::after,
+#clientes h2::after,
+#contacto h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 18px;
+  background: linear-gradient(90deg, var(--aalto-blue), transparent);
+  transform-origin: left center;
+}
+
+#clientes h2::after,
+#especialidades h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@supports (animation-timeline: view()) {
+  #sectores .grid > div,
+  #quienes > div,
+  #quienes .grid > div,
+  #especialidades .grid > div,
+  #clientes .grid > div,
+  #contacto .space-y-10,
+  #contacto .bg-white,
+  footer > div > div {
+    animation: aaltoFadeUp both;
+    animation-timeline: view();
+    animation-range: entry 8% cover 28%;
+  }
+
+  #clientes .grid > div:nth-child(2n),
+  #especialidades .grid > div:nth-child(2n),
+  #sectores .grid > div:nth-child(2n) {
+    animation-range: entry 14% cover 34%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  #sectores .grid > div,
+  #quienes > div,
+  #especialidades .grid > div,
+  #clientes .grid > div,
+  #contacto .space-y-10,
+  #contacto .bg-white {
+    animation: aaltoFadeSoft 700ms var(--aalto-ease-out) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  main > section:first-of-type > div.absolute > img {
+    animation-duration: 22s;
+  }
+
+  #sectores .grid > div:hover,
+  #especialidades .grid > div:hover,
+  #clientes .grid > div:hover,
+  #quienes .grid > div:hover {
+    transform: translateY(-3px);
+  }
+
+  main > section:first-of-type h1 span::after {
+    height: 0.05em;
+  }
+}
